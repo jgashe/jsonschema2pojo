@@ -159,13 +159,13 @@ public class EnumIT {
         resultsClassLoader.loadClass("com.example.EnumWithUppercaseProperty$TimeFormat");
     }
 
-    // @Test
-    // public void enumWithExtendedCharacters() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
+    @Test
+    public void enumWithExtendedCharacters() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
 
-    //     ClassLoader resultsClassLoader = generateAndCompile("/schema/enum/enumWithExtendedCharacters.json", "com.example");
+        ClassLoader resultsClassLoader = generateAndCompile("/schema/enum/enumWithExtendedCharacters.json", "com.example");
 
-    //     resultsClassLoader.loadClass("com.example.EnumWithExtendedCharacters");
-    // }
+        resultsClassLoader.loadClass("com.example.EnumWithExtendedCharacters");
+    }
 
     @Test
     @SuppressWarnings("unchecked")

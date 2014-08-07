@@ -1,16 +1,16 @@
 /**
  * Copyright © 2010-2014 Nokia
  *
- * Licensed under the Apache License, Version 2.0 (the "License"); 
- * you may not use this file except in compliance with
- * the License. You may obtain a copy of the License at
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, 
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
- * See the License for the specific language governing permissions and 
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
  * limitations under the License.
  */
 package org.jsonschema2pojo.rules;
@@ -59,13 +59,13 @@ public class ObjectRule implements Rule<JPackage, JType> {
     /**
      * Applies this schema rule to take the required code generation steps.
      * <p>
-     * When this rule is applied for schemas of type object, the properties of 
-     * the schema are used to generate a new Java class and determine its 
+     * When this rule is applied for schemas of type object, the properties of
+     * the schema are used to generate a new Java class and determine its
      * characteristics. See other implementers of {@link Rule} for details.
      * <p>
-     * A new Java type will be created when this rule is applied, it is 
-     * annotated as {@link Generated}, it is given <code>equals</code>, 
-     * <code>hashCode</code> and <code>toString</code> methods and implements 
+     * A new Java type will be created when this rule is applied, it is
+     * annotated as {@link Generated}, it is given <code>equals</code>,
+     * <code>hashCode</code> and <code>toString</code> methods and implements
      * {@link Serializable}.
      */
     @Override
@@ -127,20 +127,20 @@ public class ObjectRule implements Rule<JPackage, JType> {
     /**
      * Creates a new Java class that will be generated.
      *
-     * @param nodeName 
+     * @param nodeName
      *            the node name which may be used to dictate the new class name
-     * @param node 
-     *            the node representing the schema that caused the need for a 
+     * @param node
+     *            the node representing the schema that caused the need for a
      *            new class. This node may include a 'javaType' property which
-     *            if present will override the fully qualified name of the newly 
+     *            if present will override the fully qualified name of the newly
      *            generated class.
-     * @param _package 
-     *            the package which may contain a new class after this method 
+     * @param _package
+     *            the package which may contain a new class after this method
      *            call
      * @return a reference to a newly created class
-     * @throws ClassAlreadyExistsException 
-     *            if the given arguments cause an attempt to create a class 
-     *            that already exists, either on the classpath or in the 
+     * @throws ClassAlreadyExistsException
+     *            if the given arguments cause an attempt to create a class
+     *            that already exists, either on the classpath or in the
      *            current map of classes to be generated.
      */
     private JDefinedClass createClass(String nodeName, JsonNode node, JPackage _package) throws ClassAlreadyExistsException {
@@ -231,7 +231,7 @@ public class ObjectRule implements Rule<JPackage, JType> {
     private void addToString(JDefinedClass jclass) {
         JMethod toString = jclass.method(JMod.PUBLIC, String.class, "toString");
 
-        Class<?> toStringBuilder = ruleFactory.getGenerationConfig().isUseCommonsLang3() ? 
+        Class<?> toStringBuilder = ruleFactory.getGenerationConfig().isUseCommonsLang3() ?
                 org.apache.commons.lang3.builder.ToStringBuilder.class : 
                     org.apache.commons.lang.builder.ToStringBuilder.class;
 
@@ -246,7 +246,7 @@ public class ObjectRule implements Rule<JPackage, JType> {
     private void addHashCode(JDefinedClass jclass) {
         JMethod hashCode = jclass.method(JMod.PUBLIC, int.class, "hashCode");
 
-        Class<?> hashcodeBuiler = ruleFactory.getGenerationConfig().isUseCommonsLang3() ? 
+        Class<?> hashcodeBuiler = ruleFactory.getGenerationConfig().isUseCommonsLang3() ?
                 org.apache.commons.lang3.builder.HashCodeBuilder.class : 
                     org.apache.commons.lang.builder.HashCodeBuilder.class;
 
@@ -262,7 +262,7 @@ public class ObjectRule implements Rule<JPackage, JType> {
         JMethod equals = jclass.method(JMod.PUBLIC, boolean.class, "equals");
         JVar otherObject = equals.param(Object.class, "other");
 
-        Class<?> equalsBuilder = ruleFactory.getGenerationConfig().isUseCommonsLang3() ? 
+        Class<?> equalsBuilder = ruleFactory.getGenerationConfig().isUseCommonsLang3() ?
                 org.apache.commons.lang3.builder.EqualsBuilder.class : 
                     org.apache.commons.lang.builder.EqualsBuilder.class;
 
