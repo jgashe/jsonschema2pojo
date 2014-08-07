@@ -23,7 +23,7 @@
         <module>jsonschema2pojo-core</module>
         <module>jsonschema2pojo-maven-plugin</module>
         <module>jsonschema2pojo-gradle-plugin</module>
-        <!--<module>jsonschema2pojo-integration-tests</module>-->
+        <module>jsonschema2pojo-integration-tests</module>
     </modules>
 
     <developers>
