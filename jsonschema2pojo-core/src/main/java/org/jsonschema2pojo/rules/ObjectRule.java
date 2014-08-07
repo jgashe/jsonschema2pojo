@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ *      http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -44,7 +44,7 @@ import static org.jsonschema2pojo.rules.PrimitiveTypes.*;
 
 /**
  * Applies the generation steps required for schemas of type "object".
- *
+ * 
  * @see <a
  *      href="http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1">http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.1</a>
  */
@@ -126,7 +126,7 @@ public class ObjectRule implements Rule<JPackage, JType> {
 
     /**
      * Creates a new Java class that will be generated.
-     *
+     * 
      * @param nodeName
      *            the node name which may be used to dictate the new class name
      * @param node
@@ -139,9 +139,9 @@ public class ObjectRule implements Rule<JPackage, JType> {
      *            call
      * @return a reference to a newly created class
      * @throws ClassAlreadyExistsException
-     *            if the given arguments cause an attempt to create a class
-     *            that already exists, either on the classpath or in the
-     *            current map of classes to be generated.
+     *             if the given arguments cause an attempt to create a class
+     *             that already exists, either on the classpath or in the
+     *             current map of classes to be generated.
      */
     private JDefinedClass createClass(String nodeName, JsonNode node, JPackage _package) throws ClassAlreadyExistsException {
 
